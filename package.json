@@ -1,6 +1,9 @@
 {
   "private": true,
+  "name": "wip-pwa-module",
+  "version": "1.0.0",
   "contributors": [
+    "Xander Luciano <XanderLuciano@gmail.com>",
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "scripts": {
@@ -9,7 +12,8 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ext .js packages",
     "release": "lerna publish --conventional-commits",
-    "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done"
+    "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done",
+    "force-test-release": "for p in packages/*; do cd $p ; npm pack ; cd ../.. ; done"
   },
   "workspaces": [
     "packages/*"
