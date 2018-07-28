@@ -48,7 +48,7 @@ function getOptions (moduleOptions) {
     routerBase,
     publicPath,
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
-    swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
+    swDest: path.resolve(this.options.srcDir, typeof this.options.dir.static != 'undefined' ? this.options.dir.static : 'static', 'sw.js'),
     directoryIndex: '/',
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
@@ -98,10 +98,11 @@ function addTemplates (options) {
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'
       }))),
+      clientsClaim: options.clientsClaim,
       wbOptions: {
         cacheId: options.cacheId,
-        clientsClaim: options.clientsClaim,
-        directoryIndex: options.directoryIndex
+        directoryIndex: options.directoryIndex,
+        cleanUrls: false
       }
     }
   })
@@ -131,13 +132,13 @@ function emitAssets (options) {
     const source = readFileSync(path)
     const hash = hashSum(source)
     const dst = `${name}.${hash}.${ext}`
-    assets.push({source, dst})
+    assets.push({ source, dst })
     return dst
   }
 
   // Write assets after build
   const hook = builder => {
-    assets.forEach(({source, dst}) => {
+    assets.forEach(({ source, dst }) => {
       writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
     })
   }
@@ -165,6 +166,11 @@ function emitAssets (options) {
 function workboxInject (options) {
   const hook = () => {
     const opts = Object.assign({}, options)
+    const VALID_KEYS = [
+      'swDest', 'swSrc', 'globDirectory', 'globFollow', 'globIgnores', 'globPatterns', 'dontCacheBustUrlsMatching',
+      'globStrict', 'templatedUrls', 'maximumFileSizeToCacheInBytes', 'modifyUrlPrefix', 'manifestTransforms'
+    ]
+    Object.keys(opts).filter(k => !VALID_KEYS.includes(k)).forEach(k => { delete opts[k] })
     delete opts.runtimeCaching
     return swBuild.injectManifest(opts)
   }
@@ -175,6 +181,26 @@ function workboxInject (options) {
     this.nuxt.plugin('build', builder => {
       builder.plugin('built', hook)
     })
+  }
+}
+
+// =============================================
+// setHeaders
+// =============================================
+function setHeaders (options) {
+  if (options.customHeaders) {
+    return
+  }
+  const originalSetHeadersMethod = this.options.render.static.setHeaders
+  this.options.render.static.setHeaders = (res, path) => {
+    if (path.match(/sw\.js$/)) {
+      // Prevent caching service worker
+      res.setHeader('Cache-Control', 'no-cache')
+    } else {
+      if (typeof originalSetHeadersMethod !== 'undefined') {
+        originalSetHeadersMethod(res, path)
+      }
+    }
   }
 }
 
