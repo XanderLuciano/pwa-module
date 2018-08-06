@@ -1,7 +1,5 @@
 {
   "private": true,
-  "name": "wip-pwa-module",
-  "version": "1.0.0",
   "contributors": [
     "Xander Luciano <XanderLuciano@gmail.com>",
     "Pooya Parsa <pooya@pi0.ir>"
@@ -12,6 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ext .js packages",
     "release": "lerna publish --conventional-commits",
+    "test-release": "lerna publish --skip-git --skip-npm",
     "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done",
     "force-test-release": "for p in packages/*; do cd $p ; npm pack ; cd ../.. ; done"
   },
@@ -40,8 +39,9 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.0.4",
     "jsdom": "^11.5.1",
-    "lerna": "^3.0.0-alpha.1",
+    "lerna": "^3.0.0-rc.0",
     "nuxt": "^1.3.0",
     "standard-version": "^4.2.0"
-  }
+  },
+  "name": "pwa-module"
 }
