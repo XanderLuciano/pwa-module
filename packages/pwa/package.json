@@ -1,6 +1,6 @@
 {
   "name": "@ncviewer/pwa",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/XanderLuciano/pwa-module",
@@ -12,5 +12,6 @@
     "@nuxtjs/manifest": "file:../manifest",
     "@nuxtjs/meta": "file:../meta",
     "@nuxtjs/workbox": "file:../workbox"
-  }
+  },
+  "gitHead": "6707c71255fcff410e053f3cd345024478da367a"
 }

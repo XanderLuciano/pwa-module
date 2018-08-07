@@ -1,6 +1,6 @@
 {
   "name": "@ncviewer/workbox",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/XanderLuciano/pwa-module",
@@ -9,5 +9,6 @@
   },
   "dependencies": {
     "workbox-build": "^3.4.1"
-  }
+  },
+  "gitHead": "6707c71255fcff410e053f3cd345024478da367a"
 }

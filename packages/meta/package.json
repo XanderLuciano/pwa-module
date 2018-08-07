@@ -1,10 +1,11 @@
 {
   "name": "@ncviewer/meta",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/XanderLuciano/pwa-module",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "6707c71255fcff410e053f3cd345024478da367a"
 }

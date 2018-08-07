@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+# 0.3.0 (2018-08-07)
+
+
+### Bug Fixes
+
+* **docs:** add reference to pwa module ([49b7c49](https://github.com/XanderLuciano/pwa-module/commit/49b7c49))
+* **manifest:** run only on build ([ecaa835](https://github.com/XanderLuciano/pwa-module/commit/ecaa835))
+* workaround to fill meta with SPA and nuxt start ([a0fb908](https://github.com/XanderLuciano/pwa-module/commit/a0fb908))
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/XanderLuciano/pwa-module/commit/c0efb1d))
+* **manifest:** allow overriding publicPath ([#19](https://github.com/XanderLuciano/pwa-module/issues/19)) ([4e6782e](https://github.com/XanderLuciano/pwa-module/commit/4e6782e))
+
+
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/XanderLuciano/pwa-module/compare/@nuxtjs/manifest@2.1.0...@nuxtjs/manifest@0.1.2) (2018-08-07)
 
