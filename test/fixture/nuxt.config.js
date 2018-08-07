@@ -12,15 +12,15 @@ module.exports = {
     }
   },
   modules: [
-    '@nuxtjs/onesignal',
-    '@nuxtjs/pwa'
+    '@ncviewer/onesignal',
+    '@ncviewer/pwa'
   ],
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
   },
   workbox: {
-    dev: true,
+    // dev: true,
     importScripts: [
       'custom-sw.js'
     ],
