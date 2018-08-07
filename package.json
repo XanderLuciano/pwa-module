@@ -5,11 +5,12 @@
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "scripts": {
-    "test": "npm lint && jest",
+    "test": "npm run lint && jest",
+    "jest": "jest",
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits",
+    "release": "lerna publish",
     "test-release": "lerna publish --skip-git --skip-npm",
     "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done",
     "force-test-release": "for p in packages/*; do cd $p ; npm pack ; cd ../.. ; done"
