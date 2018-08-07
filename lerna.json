@@ -1,7 +1,9 @@
 {
   "version": "independent",
   "npmClient": "npm",
-  "npmClientArgs": ["--no-bin-links"],
+  "npmClientArgs": [
+    "--no-bin-links"
+  ],
   "packages": [
     "packages/*"
   ]
