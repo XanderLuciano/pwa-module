@@ -1,6 +1,6 @@
 {
-  "name": "@nuxtjs/meta",
-  "version": "2.2.1",
+  "name": "@ncviewer/meta",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
