@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/XanderLuciano/pwa-module/compare/@nuxtjs/manifest@2.1.0...@nuxtjs/manifest@0.1.2) (2018-08-07)
+
+**Note:** Version bump only for package @nuxtjs/manifest
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/manifest@2.0.1...@nuxtjs/manifest@2.1.0) (2017-12-07)
 
